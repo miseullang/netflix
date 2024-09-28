@@ -1,21 +1,34 @@
-import { useState, useEffect } from "react";
-
-function Hello() {
-  useEffect(() => {
-    console.log('생성됨'); // 마운트 될 때 실행
-    return () => console.log('삭제됨'); // return 이후 : 마운트 해제 될 때 실행
-  },[])
-  return <h1>Hello</h1>;
-}
+import { useState } from "react";
 
 function App() {
-  const [showing, setShowing] = useState(false);
-  const onClick = () => setShowing(prev => !prev);
-
+  const [toDo, setToDo] = useState('');
+  const [toDos, setToDos] = useState([]);
+  const onChange = (event) => setToDo(event.target.value);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    if(toDo === '') {
+      return;
+    }
+    setToDos((prev) => [toDo, ...prev]);
+    setToDo('');
+  }
   return (
     <div>
-      <button onClick={onClick}>{showing ?  'Hide' : 'Show'}</button>
-      {showing ? <Hello/> : null}
+      <h1>My To-Do ({toDos.length})</h1>
+      <form onSubmit={onSubmit}>
+        <input
+          onChange={onChange}
+          value={toDo}
+          text='text'
+          placeholder="Write your to do" />
+          <button>Add To Do</button>
+      </form>
+      <hr/>
+      <ul>
+        {toDos.map((item, index) => 
+          <li key={index}>{item}</li>)
+        }
+      </ul>
     </div>
   );
 }
