@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/netflix/static/js/main.e1e021e5.js",
+    "main.js": "/netflix/static/js/main.1140bf71.js",
     "index.html": "/netflix/index.html",
-    "main.e1e021e5.js.map": "/netflix/static/js/main.e1e021e5.js.map"
+    "main.1140bf71.js.map": "/netflix/static/js/main.1140bf71.js.map"
   },
   "entrypoints": [
-    "static/js/main.e1e021e5.js"
+    "static/js/main.1140bf71.js"
   ]
 }
