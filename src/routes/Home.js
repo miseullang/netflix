@@ -26,7 +26,7 @@ function Home() {
     getMovies();
   },[]);
 
-// console.log(movies);
+console.log(movies);
 
   // fetch만 사용
   // useEffect(() => {
