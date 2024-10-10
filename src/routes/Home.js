@@ -26,7 +26,7 @@ function Home() {
     getMovies();
   },[]);
 
-console.log(movies);
+// console.log(movies);
 
   // fetch만 사용
   // useEffect(() => {
@@ -45,6 +45,7 @@ console.log(movies);
         <div>{movies.map((movie) => (
           <Movie
             key={movie.id}
+            id={movie.id}
             coverImg={movie.medium_cover_image}
             title={movie.title}
             summary={movie.summary}
